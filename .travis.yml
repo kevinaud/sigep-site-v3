@@ -26,6 +26,8 @@ before_script:
 
 script: karma start karma.conf.js --single-run
 
+before_deploy: "rm -rf ./dist && ng build --prod"
+
 deploy:
   provider: s3
   access_key_id: AKIAJM2YK4W7RFFHWUHA
@@ -34,5 +36,6 @@ deploy:
   bucket: sigep-site-v3
   local-dir: dist
   acl: public_read
+  skip_cleanup: true
   on:
     repo: kevinaud/sigep-site-v3
