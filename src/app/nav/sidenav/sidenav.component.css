@@ -1,0 +1,60 @@
+md-sidenav-layout {
+    height: 100%;
+}
+
+md-sidenav {
+    width: 20%;
+    min-width: 200px;
+}
+
+.sidenav-item {
+  width: 100%;
+}
+
+.sidenav-item-box {
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+.close-sidenav-btn {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.selected {
+  background: #FFEBEE !important;
+  color: #D32F2F !important;
+}
+
+[md-button]:hover::after, [md-icon-button]:hover::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.0);
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+/**
+ * Small Devices
+ */
+@media (min-width: 768px) {
+  
+}
+
+/**
+ * Medium Devices
+ */
+@media (min-width: 1024px) {
+  
+}
+
+/**
+ * Large Devices
+ */
+@media (min-width: 1200px) {
+  
+}

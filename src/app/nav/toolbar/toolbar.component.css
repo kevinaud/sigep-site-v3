@@ -1,0 +1,20 @@
+.menu-icon {
+  padding-right: 16px;
+}
+
+.menu-icon:hover {
+  cursor: pointer;
+}
+
+md-toolbar {
+  color: black;
+}
+
+.title {
+  color: black !important;
+  text-decoration: none;
+}
+
+.title, .menu-icon {
+  font-size: 22px;
+}

@@ -1,0 +1,40 @@
+<div class="row center-xs">
+  <div class="col-xs-11">
+    <div class="box">
+
+      <h1 class="title exec-title">Meet Our Exec Board</h1>
+
+    </div>
+  </div>
+</div> 
+
+<div class="row center-xs" *ngFor="let member of execMembers">
+  <div class="col-xs-11">
+    <div class="box">
+
+      <md-card class="exec-member-card">
+
+        <md-card-header>
+            <md-card-title class="align-left">{{ member.position }}</md-card-title>
+            <md-card-subtitle class="align-left">{{ member.name }}</md-card-subtitle>
+        </md-card-header>
+
+        <img md-card-image src="https://unsplash.it/200/300/?random" style="height: 300px;">
+
+        <md-card-content>
+          <p class="align-left">Classification - {{ member.classification }}</p>
+          <p class="align-left">Major - {{ member.major }}</p>
+          <p class="align-left">Initiated - {{ member.initiated }}</p>
+          <p class="align-left">Home Town - {{ member.hometown }}</p>
+        </md-card-content>
+        
+        <!--<md-card-content>
+            <p>Here is some more content</p>
+        </md-card-content>-->
+
+      </md-card>
+
+    </div>
+  </div>
+</div>
+
