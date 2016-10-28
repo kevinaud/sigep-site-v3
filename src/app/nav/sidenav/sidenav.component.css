@@ -26,9 +26,9 @@ md-sidenav {
   color: #D32F2F !important;
 }
 
-[md-button]:hover::after, [md-icon-button]:hover::after {
+/*[md-button]:hover::after, [md-icon-button]:hover::after {
     background-color: rgba(0, 0, 0, 0.0);
-}
+}*/
 
 /**
  * Small Devices
