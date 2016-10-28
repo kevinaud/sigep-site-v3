@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { NavLocation } from './nav-location.ts';
 
@@ -13,7 +14,11 @@ export class SidenavComponent implements OnInit {
 
   @Input() navLocations: NavLocation[] = [];
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  navigate(location) {
+    this.router.navigate([location]);
+  }
 
   ngOnInit() {
     this.sidenavOpen = false;
