@@ -27,15 +27,7 @@ md-sidenav {
 }
 
 [md-button]:hover::after, [md-icon-button]:hover::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    content: '';
     background-color: rgba(0, 0, 0, 0.0);
-    border-radius: inherit;
-    pointer-events: none;
 }
 
 /**
