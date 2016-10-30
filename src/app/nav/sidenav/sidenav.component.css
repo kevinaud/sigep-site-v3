@@ -9,6 +9,8 @@ md-sidenav {
 
 .sidenav-item {
   width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .sidenav-item-box {

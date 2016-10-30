@@ -18,10 +18,12 @@
           <div class="box sidenav-item-box">
             
             <!-- temp -->
-            <button md-button class="sidenav-item"
-              (mouseup)="navigate(navLocation.route)"
-              (touch)="navigate(navLocation.route)"
-              >{{ navLocation.title }}</button>
+            <md-card class="sidenav-item"
+              [routerLink]="navLocation.route">
+              
+              {{ navLocation.title }}
+              
+            </md-card>
           
           </div>
 
