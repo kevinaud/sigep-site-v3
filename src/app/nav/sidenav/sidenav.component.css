@@ -11,6 +11,8 @@ md-sidenav {
   width: 100%;
   padding-left: 0px;
   padding-right: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .sidenav-item-box {
