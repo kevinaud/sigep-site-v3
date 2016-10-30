@@ -3,6 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { MaterialModule } from '@angular/material';
 
@@ -42,7 +43,7 @@ import { RecruitmentSignUpComponent } from './recruitment/recruitment-sign-up/re
     routing,
     NavModule
   ],
-  providers: [ ],
+  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy } ],
   bootstrap: [ AppComponent ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
