@@ -19,7 +19,7 @@
             
             <!-- temp -->
             <button md-button class="sidenav-item"
-              [routerLink]="navLocation.route"
+              (mouseup)="navigate(navLocation.route)"
               >{{ navLocation.title }}</button>
           
           </div>
