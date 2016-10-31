@@ -29,6 +29,7 @@ export class RecruitmentSignUpComponent implements OnInit {
 
   onSubmit(event) {
 
+    this.responseReceived = false;
     this.waiting = true;
 
     this.mailchimp.subscribeToRecruitment(event).subscribe((response) => {
