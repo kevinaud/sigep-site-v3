@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit }  from '@angular/core';
+import { FormGroup }                 from '@angular/forms';
+
+import { QuestionService } from '../../forms/question.service';
 
 @Component({
   selector: 'app-recruitment-sign-up',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecruitmentSignUpComponent implements OnInit {
 
-  constructor() { }
+  questions;
+
+  constructor(service: QuestionService) {
+    this.questions = service.getQuestions();
+    console.log(this.questions);
+  }
 
   ngOnInit() {
+
   }
 
 }

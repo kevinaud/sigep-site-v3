@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -9,6 +9,7 @@ import { MaterialModule } from '@angular/material';
 
 import { routing } from './app.routing';
 import { NavModule } from './nav/nav.module';
+import { FormsModule } from './forms/forms.module'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -37,11 +38,11 @@ import { RecruitmentSignUpComponent } from './recruitment/recruitment-sign-up/re
   imports: [
     MaterialModule.forRoot(),
     BrowserModule,
-    FormsModule,
     HttpModule,
     RouterModule,
     routing,
-    NavModule
+    NavModule,
+    FormsModule,
   ],
   providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy } ],
   bootstrap: [ AppComponent ],

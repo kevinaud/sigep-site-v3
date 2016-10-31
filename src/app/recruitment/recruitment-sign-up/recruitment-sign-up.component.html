@@ -4,22 +4,23 @@
   
   <md-card-content>
 
-    <form>
-
      <div class="row center-xs">
       <div class="col-xs-11">
         <div class="box">
 
-          <md-input type="text" placeholder="Name"></md-input>
-          <md-input type="text" placeholder="Email"></md-input>
-          <md-input type="text" placeholder="Major"></md-input>
+          <div>
+            <dynamic-form [questions]="questions"></dynamic-form>
+          </div>
 
+          <!--<md-input type="text" placeholder="Email Address"></md-input>
+          <md-input type="text" placeholder="First Name"></md-input>
+          <md-input type="text" placeholder="Last Name"></md-input>
+          <md-input type="text" placeholder="Classification"></md-input>
+          <md-input type="text" placeholder="Major"></md-input>-->
 
         </div>
       </div>
      </div>
-
-    </form>
 
   </md-card-content>
 
