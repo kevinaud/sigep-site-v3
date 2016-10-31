@@ -4,6 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
+import { QuestionService } from '../../forms/question.service';
 import { RecruitmentSignUpComponent } from './recruitment-sign-up.component';
 
 describe('RecruitmentSignUpComponent', () => {
@@ -13,7 +14,10 @@ describe('RecruitmentSignUpComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RecruitmentSignUpComponent ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [ 
+        { provide: QuestionService, useClass: QuestionService }
+      ]
     })
     .compileComponents();
   }));

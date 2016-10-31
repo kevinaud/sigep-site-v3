@@ -7,7 +7,7 @@ import { QuestionBase } from './question-base';
 export class QuestionControlService {
   constructor() { }
 
-  toFormGroup(questions: QuestionBase<any>[] ) {
+  toFormGroup( questions: QuestionBase<any>[] ) {
     let group: any = {};
 
     questions.forEach(question => {

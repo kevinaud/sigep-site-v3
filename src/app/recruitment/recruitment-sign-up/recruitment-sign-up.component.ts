@@ -14,7 +14,6 @@ export class RecruitmentSignUpComponent implements OnInit {
 
   constructor(service: QuestionService) {
     this.questions = service.getQuestions();
-    console.log(this.questions);
   }
 
   ngOnInit() {

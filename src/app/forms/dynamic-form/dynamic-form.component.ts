@@ -14,8 +14,11 @@ export class DynamicFormComponent implements OnInit {
   @Input() questions: QuestionBase<any>[] = [];
   form: FormGroup;
   payLoad = '';
+  qcs: QuestionControlService;
 
-  constructor(private qcs: QuestionControlService) {  }
+  constructor(_qcs: QuestionControlService) {  
+    this.qcs = _qcs;
+  }
 
   ngOnInit() {
     this.form = this.qcs.toFormGroup(this.questions);
