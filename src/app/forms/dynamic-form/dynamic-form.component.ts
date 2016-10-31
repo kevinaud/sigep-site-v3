@@ -1,8 +1,9 @@
-import { Component, Input, OnInit }  from '@angular/core';
-import { FormGroup }                 from '@angular/forms';
+import { Component, Input, Output, OnInit, EventEmitter }  from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
-import { QuestionBase }              from '../question-base';
-import { QuestionControlService }    from '../question-control.service';
+import { FormResponse } from '../form-response';
+import { QuestionBase } from '../question-base';
+import { QuestionControlService } from '../question-control.service';
 
 @Component({
   selector: 'dynamic-form',
@@ -12,10 +13,15 @@ import { QuestionControlService }    from '../question-control.service';
 export class DynamicFormComponent implements OnInit {
 
   @Input() questions: QuestionBase<any>[] = [];
+  @Input() response: FormResponse = { success: false, message: '' };
+  @Input() responseReceived: boolean = false;
+  @Input() waiting: boolean = false;
+  @Output() submitted: EventEmitter<any> = new EventEmitter();
+  
   form: FormGroup;
   payLoad = '';
   qcs: QuestionControlService;
-
+  
   constructor(_qcs: QuestionControlService) {  
     this.qcs = _qcs;
   }
@@ -25,7 +31,7 @@ export class DynamicFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.payLoad = JSON.stringify(this.form.value);
+    this.submitted.emit(this.form.value);
   }
 
 }

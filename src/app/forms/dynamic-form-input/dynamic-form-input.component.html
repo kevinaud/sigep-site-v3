@@ -9,8 +9,16 @@
       <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
     </select>
       
-    <md-radio-group *ngSwitchCase="'radio'" class="row start-xs">
+    <md-radio-group 
+      [id]="question.key" 
+      [formControlName]="question.key" 
+      *ngSwitchCase="'radio'" 
+      class="row start-xs required" required>
+
+      <h3 class="radio-group-label">{{ question.label }}</h3>
+      
       <span *ngFor="let opt of question.options" class="col-xs-12"><md-radio-button [value]="opt.key" class="box">{{ opt.value }}</md-radio-button><br></span>
+    
     </md-radio-group>
 
   </div> 

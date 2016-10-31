@@ -11,40 +11,40 @@ export class QuestionService {
   getQuestions() {
     let questions: QuestionBase<any>[] = [
       new RadioQuestion({
-        key: 'brave',
-        label: 'Classification',
+        key: 'class',
+        label: 'Classification*',
         options: [
-          { key: 'freshman', value: 'Freshman' },
-          { key: 'sophomore', value: 'Sophomore' },
-          { key: 'junior', value: 'Junior' },
-          { key: 'senior', value: 'Senior' },
+          { key: 'Freshman', value: 'Freshman' },
+          { key: 'Sophomore', value: 'Sophomore' },
+          { key: 'Junior', value: 'Junior' },
+          { key: 'Senior', value: 'Senior' },
         ],
         order: 4
       }),
       new TextboxQuestion({
         key: 'firstName',
-        label: 'First name',
+        label: 'First name*',
         required: true,
         type: 'text',
         order: 2
       }),
       new TextboxQuestion({
         key: 'lastName',
-        label: 'Last Name',
+        label: 'Last Name*',
         required: true,
         type: 'text',
         order: 3
       }),
       new TextboxQuestion({
-        key: 'emailAddress',
-        label: 'Email Address',
+        key: 'email',
+        label: 'Email Address*',
         type: 'email',
         required: true,
         order: 1
       }),
       new TextboxQuestion({
         key: 'major',
-        label: 'Major',
+        label: 'Major*',
         type: 'text',
         required: true,
         order: 3

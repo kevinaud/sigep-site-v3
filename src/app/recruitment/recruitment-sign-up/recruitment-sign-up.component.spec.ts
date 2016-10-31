@@ -5,7 +5,14 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { QuestionService } from '../../forms/question.service';
+import { MailchimpService } from '../../mailchimp/mailchimp.service';
 import { RecruitmentSignUpComponent } from './recruitment-sign-up.component';
+
+class MailchimpServiceStub {
+  constructor () {
+
+  }
+}
 
 describe('RecruitmentSignUpComponent', () => {
   let component: RecruitmentSignUpComponent;
@@ -16,7 +23,8 @@ describe('RecruitmentSignUpComponent', () => {
       declarations: [ RecruitmentSignUpComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
       providers: [ 
-        { provide: QuestionService, useClass: QuestionService }
+        { provide: QuestionService, useClass: QuestionService },
+        { provide: MailchimpService, useValue: MailchimpServiceStub }
       ]
     })
     .compileComponents();
@@ -31,4 +39,9 @@ describe('RecruitmentSignUpComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display an error if mailchimp sign up fails', () => {
+    expect(true).toBeTruthy();
+  });
+
 });

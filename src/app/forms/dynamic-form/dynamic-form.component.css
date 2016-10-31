@@ -6,3 +6,20 @@
 .submit-btn {
   margin-top: 15px;
 }
+
+.error-msg {
+  margin-top: 15px;
+  color: #F44336;
+}
+
+.success-msg {
+  margin-top: 15px;
+  color: #4CAF50;
+}
+
+.spinner {
+    display: block;
+    margin-top: 15px;
+    height: 100% !important;
+    width: 100% !important;
+}

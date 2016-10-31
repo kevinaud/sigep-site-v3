@@ -22,6 +22,9 @@ import { DonateComponent } from './donate/donate.component';
 import { RecruitmentComponent } from './recruitment/recruitment.component';
 import { RecruitmentSignUpComponent } from './recruitment/recruitment-sign-up/recruitment-sign-up.component';
 
+import { EnvService } from './env/env.service';
+import { MailchimpService } from './mailchimp/mailchimp.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +47,11 @@ import { RecruitmentSignUpComponent } from './recruitment/recruitment-sign-up/re
     NavModule,
     FormsModule,
   ],
-  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy } ],
+  providers: [ 
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    MailchimpService,
+    EnvService
+  ],
   bootstrap: [ AppComponent ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

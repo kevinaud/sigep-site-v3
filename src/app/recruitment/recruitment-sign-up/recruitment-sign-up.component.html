@@ -8,15 +8,12 @@
       <div class="col-xs-11">
         <div class="box">
 
-          <div>
-            <dynamic-form [questions]="questions"></dynamic-form>
-          </div>
-
-          <!--<md-input type="text" placeholder="Email Address"></md-input>
-          <md-input type="text" placeholder="First Name"></md-input>
-          <md-input type="text" placeholder="Last Name"></md-input>
-          <md-input type="text" placeholder="Classification"></md-input>
-          <md-input type="text" placeholder="Major"></md-input>-->
+          <dynamic-form 
+            [questions]="questions"
+            [response]="response"
+            [responseReceived]="responseReceived"
+            [waiting]="waiting"
+            (submitted)="onSubmit($event)"></dynamic-form>
 
         </div>
       </div>
