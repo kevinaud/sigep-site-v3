@@ -3,16 +3,18 @@ import { Injectable }       from '@angular/core';
 import { RadioQuestion } from './question-radio';
 import { QuestionBase }     from './question-base';
 import { TextboxQuestion }  from './question-text';
+import { DateQuestion }  from './question-date';
+import { AddressQuestion }  from './question-address';
 
 @Injectable()
 export class QuestionService {
-  // Todo: get from a remote source of question metadata
-  // Todo: make asynchronous
-  getQuestions() {
+  
+  getRecruitmentQuestions() {
     let questions: QuestionBase<any>[] = [
       new RadioQuestion({
         key: 'class',
         label: 'Classification*',
+        errorLabel: 'Classification',
         options: [
           { key: 'Freshman', value: 'Freshman' },
           { key: 'Sophomore', value: 'Sophomore' },
@@ -23,7 +25,8 @@ export class QuestionService {
       }),
       new TextboxQuestion({
         key: 'firstName',
-        label: 'First name*',
+        label: 'First Name*',
+        errorLabel: 'First Name',
         required: true,
         type: 'text',
         order: 2
@@ -31,6 +34,7 @@ export class QuestionService {
       new TextboxQuestion({
         key: 'lastName',
         label: 'Last Name*',
+        errorLabel: 'Last Name',
         required: true,
         type: 'text',
         order: 3
@@ -38,6 +42,7 @@ export class QuestionService {
       new TextboxQuestion({
         key: 'email',
         label: 'Email Address*',
+        errorLabel: 'Email Address',
         type: 'email',
         required: true,
         order: 1
@@ -45,6 +50,7 @@ export class QuestionService {
       new TextboxQuestion({
         key: 'major',
         label: 'Major*',
+        errorLabel: 'Major',
         type: 'text',
         required: true,
         order: 3
@@ -52,4 +58,51 @@ export class QuestionService {
     ];
     return questions.sort((a, b) => a.order - b.order);
   }
+
+  getAlumniQuestions() {
+    let questions: QuestionBase<any>[] = [
+      new TextboxQuestion({
+        key: 'email',
+        label: 'Email Address*',
+        errorLabel: 'Email Address',
+        type: 'email',
+        required: true,
+        order: 1
+      }),
+      new TextboxQuestion({
+        key: 'firstName',
+        label: 'First Name*',
+        errorLabel: 'First Name',
+        required: true,
+        type: 'text',
+        order: 2
+      }),
+      new TextboxQuestion({
+        key: 'lastName',
+        label: 'Last Name*',
+        errorLabel: 'Last Name',
+        required: true,
+        type: 'text',
+        order: 3
+      }),
+      new DateQuestion({
+        key: 'gradDate',
+        label: 'Graduation Date*',
+        errorLabel: 'Graduation Date',
+        required: true,
+        type: 'text',
+        order: 4
+      }),
+      new AddressQuestion({
+        key: 'address',
+        label: 'Address',
+        errorLabel: 'Address',
+        required: false,
+        type: 'text',
+        order: 5
+      })
+    ];
+    return questions.sort((a, b) => a.order - b.order);
+  }
+
 }

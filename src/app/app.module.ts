@@ -24,6 +24,7 @@ import { RecruitmentSignUpComponent } from './recruitment/recruitment-sign-up/re
 
 import { EnvService } from './env/env.service';
 import { MailchimpService } from './mailchimp/mailchimp.service';
+import { AlumniSignUpComponent } from './alumni/alumni-sign-up/alumni-sign-up.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MailchimpService } from './mailchimp/mailchimp.service';
     AlumniComponent,
     DonateComponent,
     RecruitmentComponent,
-    RecruitmentSignUpComponent
+    RecruitmentSignUpComponent,
+    AlumniSignUpComponent
   ],
   imports: [
     MaterialModule.forRoot(),

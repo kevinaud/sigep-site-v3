@@ -5,11 +5,11 @@ import { QuestionService } from '../../forms/question.service';
 import { MailchimpService } from '../../mailchimp/mailchimp.service';
 
 @Component({
-  selector: 'app-recruitment-sign-up',
-  templateUrl: './recruitment-sign-up.component.html',
-  styleUrls: ['./recruitment-sign-up.component.css']
+  selector: 'app-alumni-sign-up',
+  templateUrl: './alumni-sign-up.component.html',
+  styleUrls: ['./alumni-sign-up.component.css']
 })
-export class RecruitmentSignUpComponent implements OnInit {
+export class AlumniSignUpComponent implements OnInit {
 
   questions;
   waiting = false;
@@ -20,7 +20,7 @@ export class RecruitmentSignUpComponent implements OnInit {
   };
 
   constructor(private service: QuestionService, private mailchimp: MailchimpService) {
-    this.questions = service.getRecruitmentQuestions();
+    this.questions = service.getAlumniQuestions();
   }
 
   ngOnInit() {
@@ -29,16 +29,18 @@ export class RecruitmentSignUpComponent implements OnInit {
 
   onSubmit(event) {
 
-    this.responseReceived = false;
+    console.log(event);
+
+    /*this.responseReceived = false;
     this.waiting = true;
 
-    this.mailchimp.subscribeToRecruitment(event).subscribe((response) => {
+    this.mailchimp.subscribeToAlumni(event).subscribe((response) => {
 
       this.waiting = false;
       this.response = response.json();
       this.responseReceived = true;
 
-    });
+    });*/
   }
 
 }
