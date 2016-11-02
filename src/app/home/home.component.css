@@ -1,0 +1,13 @@
+h1.title {
+  margin-bottom: 0px;
+}
+
+h2.title {
+  margin-top: 0px;
+}
+
+.twitter-feed {
+  overflow-y: scroll;
+  height: 400px;
+  margin-bottom: 80px;
+}
