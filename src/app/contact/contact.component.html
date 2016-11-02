@@ -1,13 +1,31 @@
 <div class="row center-xs">
-    <div class="col-xs-11">
-        <div class="box">
+  <div class="col-xs-11">
+    <div class="box">
 
-            <md-card class="main-card">
+      <h1 class="title">Contact Us</h1>
 
-              <md-card-title>Contact Us</md-card-title>
-
-            </md-card>
-
-        </div>
     </div>
+  </div>
+</div> 
+
+<div class="row center-xs" *ngFor="let contact of contacts">
+  <div class="col-xs-11">
+    <div class="box">
+
+      <md-card class="contact-card">
+
+        <md-card-title>{{ contact.position }}</md-card-title>
+
+        <md-card-content>
+          
+          <p>{{ contact.name }}</p>
+          <p>{{ contact.email }}</p>
+          <p>{{ contact.phone }}</p>
+          
+        </md-card-content>
+
+      </md-card>
+
+    </div>
+  </div>
 </div>
