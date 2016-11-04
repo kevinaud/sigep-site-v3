@@ -12,14 +12,14 @@ export class MailchimpService {
 
   apiUrl;
 
-  constructor(env: EnvService, private http: Http) { 
+  constructor(env: EnvService, private http: Http) {
     this.apiUrl = env.getEnv().mailchimpApi;
   }
 
   subscribeToRecruitment(subscriber: RecruitmentSubscriber) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    let url = this.apiUrl + '/recruitment'
+    let url = this.apiUrl + '/recruitment';
 
     return this.http.post(url, subscriber, options);
   }
@@ -29,8 +29,7 @@ export class MailchimpService {
 
     if (this.hasAddress(subscriber)) {
       body.address = this.formatAddress(subscriber.address);
-    }
-    else {
+    } else {
       body.address = '';
     }
 
@@ -41,7 +40,7 @@ export class MailchimpService {
 
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    let url = this.apiUrl + '/alumni'
+    let url = this.apiUrl + '/alumni';
 
     return this.http.post(url, body, options);
   }
@@ -64,13 +63,13 @@ export class MailchimpService {
 
     address = this.trimAddress(address);
     address = this.removeConsecutiveSpacesInAddress(address);
-    
+
     let stringAddress = this.addressObjectToString(address);
     return stringAddress;
 
   }
 
-  trimAddress(address: Address){
+  trimAddress(address: Address) {
 
     address.line1 = address.line1.trim();
     address.line2 = address.line2.trim();
@@ -98,27 +97,27 @@ export class MailchimpService {
 
     let stringAddress = '';
 
-    if (address.line1){
-      stringAddress += address.line1 + '  ';
+    if (address.line1) {
+      stringAddress += address.line1;
     }
 
-    if (address.line2){
-      stringAddress += address.line2 + '  ';
+    if (address.line2) {
+      stringAddress += ' ' + address.line2 + ', ';
+    } else {
+      stringAddress += ', ';
     }
 
-    if (address.city){
-      stringAddress += address.city + '  ';
+    if (address.city) {
+      stringAddress += address.city + ', ';
     }
 
-    if (address.state){
-      stringAddress += address.state + '  ';
+    if (address.state) {
+      stringAddress += address.state + ' ';
     }
 
-    if (address.zip){
-      stringAddress += address.zip + '  ';
+    if (address.zip) {
+      stringAddress += address.zip;
     }
-
-    stringAddress += 'USA';
 
     return stringAddress;
 

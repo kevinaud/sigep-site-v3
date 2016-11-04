@@ -14,7 +14,7 @@ describe('Service: Mailchimp', () => {
     TestBed.configureTestingModule({
       providers: [
         MailchimpService,
-        EnvService 
+        EnvService
       ],
       imports: [
         HttpModule
@@ -80,7 +80,7 @@ describe('Service: Mailchimp', () => {
       zip: '76706'
     };
 
-    let stringAddress = '2227 S 3rd St.  #26  Waco  TX  76706  USA'
+   let stringAddress = '2227 S 3rd St. #26, Waco, TX 76706';
 
     expect(service.addressObjectToString(objAddress)).toEqual(stringAddress);
 
@@ -92,13 +92,13 @@ describe('Service: Mailchimp', () => {
       zip: '76706'
     };
 
-    stringAddress = '2227 S 3rd St.  Waco  TX  76706  USA'
+    stringAddress = '2227 S 3rd St., Waco, TX 76706';
 
     expect(service.addressObjectToString(objAddress)).toEqual(stringAddress);
 
   }));
 
-  it('should turn unformatted address object in mailchimp address format', inject([MailchimpService], (service: MailchimpService) => {
+  it('should turn unformatted address object in to mailchimp address format', inject([MailchimpService], (service: MailchimpService) => {
 
     let objAddress: Address = {
       line1: '    2227 S    3rd St.     ',
@@ -108,7 +108,19 @@ describe('Service: Mailchimp', () => {
       zip: ' 76706           '
     };
 
-    let stringAddress = '2227 S 3rd St.  #26  Waco  TX  76706  USA'
+    let stringAddress = '2227 S 3rd St. #26, Waco, TX 76706';
+
+    expect(service.formatAddress(objAddress)).toEqual(stringAddress);
+
+    objAddress = {
+      line1: '    2227 S    3rd St.     ',
+      line2: '',
+      city: 'Waco               ',
+      state: '  TX',
+      zip: ' 76706           '
+    };
+
+    stringAddress = '2227 S 3rd St., Waco, TX 76706';
 
     expect(service.formatAddress(objAddress)).toEqual(stringAddress);
 
@@ -119,10 +131,10 @@ describe('Service: Mailchimp', () => {
     let objDate: Date = {
       day: '03',
       month: '04',
-      year: '1996'
+      year: '1995'
     };
 
-    let stringDate = '04/03/1996';
+    let stringDate = '04/03/1995';
 
     expect(service.formatDate(objDate)).toEqual(stringDate);
 

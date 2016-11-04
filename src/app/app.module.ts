@@ -26,6 +26,7 @@ import { RecruitmentSignUpComponent } from './recruitment/recruitment-sign-up/re
 import { EnvService } from './env/env.service';
 import { MailchimpService } from './mailchimp/mailchimp.service';
 import { AlumniSignUpComponent } from './alumni/alumni-sign-up/alumni-sign-up.component';
+import { DonateButtonComponent } from './donate/donate-button/donate-button.component';
 
  let responsiveConfig = {
     breakPoints: {
@@ -50,7 +51,8 @@ import { AlumniSignUpComponent } from './alumni/alumni-sign-up/alumni-sign-up.co
     DonateComponent,
     RecruitmentComponent,
     RecruitmentSignUpComponent,
-    AlumniSignUpComponent
+    AlumniSignUpComponent,
+    DonateButtonComponent
   ],
   imports: [
     MaterialModule.forRoot(),

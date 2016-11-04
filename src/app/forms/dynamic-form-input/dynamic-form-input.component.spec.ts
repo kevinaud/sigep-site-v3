@@ -16,9 +16,9 @@ describe('DynamicFormInputComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ DynamicFormInputComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-      imports: [ 
+      imports: [
         ReactiveFormsModule,
-        FormsModule 
+        FormsModule
       ]
     })
     .compileComponents();

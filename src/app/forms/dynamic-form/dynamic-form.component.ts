@@ -6,7 +6,7 @@ import { QuestionBase } from '../question-base';
 import { QuestionControlService } from '../question-control.service';
 
 @Component({
-  selector: 'dynamic-form',
+  selector: 'app-dynamic-form',
   templateUrl: 'dynamic-form.component.html',
   styleUrls: [ './dynamic-form.component.css' ]
 })
@@ -17,12 +17,12 @@ export class DynamicFormComponent implements OnInit {
   @Input() responseReceived: boolean = false;
   @Input() waiting: boolean = false;
   @Output() submitted: EventEmitter<any> = new EventEmitter();
-  
+
   form: FormGroup;
   payLoad = '';
   qcs: QuestionControlService;
-  
-  constructor(_qcs: QuestionControlService) {  
+
+  constructor(_qcs: QuestionControlService) {
     this.qcs = _qcs;
   }
 

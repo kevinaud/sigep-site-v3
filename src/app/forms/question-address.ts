@@ -9,7 +9,7 @@ export class AddressQuestion extends QuestionBase<Address> {
     city: '',
     state: '',
     zip: ''
-  }
+  };
 
   constructor(options: {} = {}) {
     super(options);

@@ -10,6 +10,6 @@ export class EnvService {
 
   getEnv = function() {
     return this.env;
-  }
+  };
 
 }

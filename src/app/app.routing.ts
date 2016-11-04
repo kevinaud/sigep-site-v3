@@ -19,11 +19,11 @@ const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
+  },/*
   {
     path: 'exec-board',
     component: ExecBoardComponent
-  },
+  },*/
   {
     path: 'recruitment',
     component: RecruitmentComponent
@@ -54,11 +54,11 @@ export const appNavLocations = [
     {
       title: 'Home',
       route: '/home'
-    },
+    },/*
     {
       title: 'Exec Board',
       route: '/exec-board'
-    },
+    },*/
     {
       title: 'Recruitment',
       route: '/recruitment'

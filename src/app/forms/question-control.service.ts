@@ -11,7 +11,7 @@ export class QuestionControlService {
     let group: any = {};
 
     questions.forEach(question => {
-      if (question.controlType === 'date'){
+      if (question.controlType === 'date') {
 
         let dateGroup = this.initDateGroup(question);
 
@@ -70,5 +70,5 @@ export class QuestionControlService {
       return group;
 
     };
-  
+
 }

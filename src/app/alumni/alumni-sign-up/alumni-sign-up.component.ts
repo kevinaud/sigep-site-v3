@@ -1,5 +1,4 @@
-import { Component, Input, OnInit }  from '@angular/core';
-import { FormGroup }                 from '@angular/forms';
+import { Component, OnInit }  from '@angular/core';
 
 import { QuestionService } from '../../forms/question.service';
 import { MailchimpService } from '../../mailchimp/mailchimp.service';
@@ -31,7 +30,7 @@ export class AlumniSignUpComponent implements OnInit {
 
     console.log(event);
 
-    /*this.responseReceived = false;
+    this.responseReceived = false;
     this.waiting = true;
 
     this.mailchimp.subscribeToAlumni(event).subscribe((response) => {
@@ -40,7 +39,7 @@ export class AlumniSignUpComponent implements OnInit {
       this.response = response.json();
       this.responseReceived = true;
 
-    });*/
+    });
   }
 
 }

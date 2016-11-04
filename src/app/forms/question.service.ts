@@ -8,7 +8,7 @@ import { AddressQuestion }  from './question-address';
 
 @Injectable()
 export class QuestionService {
-  
+
   getRecruitmentQuestions() {
     let questions: QuestionBase<any>[] = [
       new RadioQuestion({

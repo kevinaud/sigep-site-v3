@@ -22,7 +22,7 @@ describe('RecruitmentSignUpComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ RecruitmentSignUpComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-      providers: [ 
+      providers: [
         { provide: QuestionService, useClass: QuestionService },
         { provide: MailchimpService, useValue: MailchimpServiceStub }
       ]

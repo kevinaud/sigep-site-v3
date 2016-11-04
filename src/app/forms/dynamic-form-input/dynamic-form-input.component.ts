@@ -14,9 +14,9 @@ export class DynamicFormInputComponent implements OnInit {
   @Input() form: FormGroup;
 
   get isValid() {
-    if (this.question.controlType === 'date'){ 
+    if (this.question.controlType === 'date') {
 
-      let valid = this.form.controls[this.question.key]['controls']['day'].valid && 
+      let valid = this.form.controls[this.question.key]['controls']['day'].valid &&
                   this.form.controls[this.question.key]['controls']['month'].valid &&
                   this.form.controls[this.question.key]['controls']['year'].valid;
 
@@ -25,30 +25,28 @@ export class DynamicFormInputComponent implements OnInit {
 
       let valid = this.form.controls[this.question.key]['controls']['line1'].valid &&
                   this.form.controls[this.question.key]['controls']['city'].valid &&
-                  this.form.controls[this.question.key]['controls']['state'].valid && 
-                  this.form.controls[this.question.key]['controls']['zip'].valid; 
+                  this.form.controls[this.question.key]['controls']['state'].valid &&
+                  this.form.controls[this.question.key]['controls']['zip'].valid;
 
       return valid;
-    }
-    else {
+    } else {
       return this.form.controls[this.question.key].valid;
     }
   }
-  get isDirty() { 
-    if (this.question.controlType === 'date'){ 
+  get isDirty() {
+    if (this.question.controlType === 'date') {
 
-      let dirty = this.form.controls[this.question.key]['controls']['day'].dirty && 
+      let dirty = this.form.controls[this.question.key]['controls']['day'].dirty &&
                   this.form.controls[this.question.key]['controls']['month'].dirty &&
                   this.form.controls[this.question.key]['controls']['year'].dirty;
 
       return dirty;
-    }
-    else if (this.question.controlType === 'address'){
+    } else if (this.question.controlType === 'address') {
 
-      let dirty = this.form.controls[this.question.key]['controls']['line1'].dirty && 
+      let dirty = this.form.controls[this.question.key]['controls']['line1'].dirty &&
                   this.form.controls[this.question.key]['controls']['city'].dirty &&
-                  this.form.controls[this.question.key]['controls']['state'].dirty && 
-                  this.form.controls[this.question.key]['controls']['zip'].dirty; 
+                  this.form.controls[this.question.key]['controls']['state'].dirty &&
+                  this.form.controls[this.question.key]['controls']['zip'].dirty;
 
       return dirty;
     } else {

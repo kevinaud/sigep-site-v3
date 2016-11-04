@@ -12,7 +12,7 @@ import { DynamicFormComponent } from './dynamic-form.component';
 describe('DynamicFormComponent', () => {
   let component: DynamicFormComponent;
   let fixture: ComponentFixture<DynamicFormComponent>;
-  
+
   let QuestionControlServiceStub = {
     toFormGroup: function(questions: QuestionBase<any>[] ) {
       let group: any = {};
@@ -23,7 +23,7 @@ describe('DynamicFormComponent', () => {
       });
       return new FormGroup(group);
     }
-  }
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

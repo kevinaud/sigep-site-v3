@@ -7,7 +7,7 @@ export class DateQuestion extends QuestionBase<Date> {
     day: '',
     month: '',
     year: ''
-  }
+  };
 
   constructor(options: {} = {}) {
     super(options);
