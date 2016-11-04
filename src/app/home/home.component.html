@@ -10,21 +10,38 @@
 </div> 
 
 <div class="row center-xs">
-  <div class="col-xs-11">
+  <div class="col-xs-11 col-sm-9 col-md-8 col-lg-5">
     <div class="box">
 
-      <md-card>
+      <md-card class="fb-feed" [responsive-window]="'parent'">
 
         <md-card-content>
           
-          <div class="fb-page" 
+          <div *responsive="{ sizes:{  window: 'parent', min: 0, max: 470 } }"
+               class="fb-page" 
                data-href="https://www.facebook.com/baylorsigep/" 
                data-tabs="timeline"
                data-small-header="false" 
                data-adapt-container-width="true" 
                data-hide-cover="false" 
                data-show-facepile="true"
-               [attr.data-width]="fbWidth">
+               data-width="231">
+               
+            <blockquote cite="https://www.facebook.com/baylorsigep/" class="fb-xfbml-parse-ignore">
+              <a href="https://www.facebook.com/baylorsigep/">Baylor Sigma Phi Epsilon TX Rho</a>
+            </blockquote>
+          
+          </div>
+
+          <div *responsive="{ sizes:{  window: 'parent', min: 471, max: 10000 } }"
+               class="fb-page" 
+               data-href="https://www.facebook.com/baylorsigep/" 
+               data-tabs="timeline"
+               data-small-header="false" 
+               data-adapt-container-width="true" 
+               data-hide-cover="false" 
+               data-show-facepile="true"
+               data-width="434">
                
             <blockquote cite="https://www.facebook.com/baylorsigep/" class="fb-xfbml-parse-ignore">
               <a href="https://www.facebook.com/baylorsigep/">Baylor Sigma Phi Epsilon TX Rho</a>
@@ -35,10 +52,15 @@
         </md-card-content>
 
       </md-card>
+  
+    </div>
+  </div>
+  <div class="col-xs-11 col-sm-9 col-md-8 col-lg-5">
+    <div class="box">
 
-      <md-card class="main-card twitter-feed">
+      <md-card class="twitter-feed row center-xs">
 
-        <md-card-content>
+        <md-card-content class="col-lg-10">
           
           <a class="twitter-timeline" href="https://twitter.com/BaylorSigEp">Tweets by BaylorSigEp</a>
           

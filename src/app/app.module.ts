@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { MaterialModule } from '@angular/material';
+import { ResponsiveModule, ResponsiveConfig } from 'ng2-responsive';
 
 import { routing } from './app.routing';
 import { NavModule } from './nav/nav.module';
@@ -26,6 +27,17 @@ import { EnvService } from './env/env.service';
 import { MailchimpService } from './mailchimp/mailchimp.service';
 import { AlumniSignUpComponent } from './alumni/alumni-sign-up/alumni-sign-up.component';
 
+ let responsiveConfig = {
+    breakPoints: {
+            xs: { max: 767 },
+            sm: { min: 768, max: 1023 },
+            md: { min: 1024, max: 1199 },
+            lg: { min: 1200, max: 10000 },
+            xl: { min: 10001 }
+    },
+    debounceTime: 100 // allow to debounce checking timer
+ };7
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +54,7 @@ import { AlumniSignUpComponent } from './alumni/alumni-sign-up/alumni-sign-up.co
   ],
   imports: [
     MaterialModule.forRoot(),
+    ResponsiveModule,
     BrowserModule,
     HttpModule,
     RouterModule,
@@ -51,6 +64,7 @@ import { AlumniSignUpComponent } from './alumni/alumni-sign-up/alumni-sign-up.co
   ],
   providers: [ 
     { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: ResponsiveConfig, useFactory: () => new ResponsiveConfig(responsiveConfig) },
     MailchimpService,
     EnvService
   ],

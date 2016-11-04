@@ -8,6 +8,10 @@ h2.title {
 
 .twitter-feed {
   overflow-y: scroll;
-  height: 400px;
+  height: 548px;
   margin-bottom: 80px;
+}
+
+.fb-feed {
+  margin-bottom: 25px;
 }
