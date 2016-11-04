@@ -15,6 +15,10 @@ md-sidenav {
   padding-bottom: 10px;
 }
 
+.sidenav-item:hover {
+  cursor: pointer;
+}
+
 .sidenav-item-box {
   margin-right: -8px;
   margin-left: -8px;

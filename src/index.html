@@ -4,6 +4,23 @@
   <meta charset="utf-8">
   <title>Sigep</title>
   <base href="/">
+  
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 
   <!-- Roboto Font -->
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -21,30 +38,9 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body style="margin: 0px; height: 100%">
-
-  <!-- Twitter javascript widget -->
-  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   
   <!-- facebook javascriptSDK -->
-  <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '770281793120820',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+  <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
   <app-root>Loading...</app-root>
 </body>
