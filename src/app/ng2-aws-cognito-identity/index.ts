@@ -1,0 +1,1 @@
+export { CognitoIdentityModule } from './cognito-identity.module';

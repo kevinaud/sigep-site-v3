@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  mailchimpApi: 'http://localhost:3000'
+  mailchimpApi: 'http://localhost:3000',
+  blogApi: 'http://localhost:3500'
 };

@@ -8,6 +8,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { MaterialModule } from '@angular/material';
 import { ResponsiveModule, ResponsiveConfig } from 'ng2-responsive';
 
+import { CognitoIdentityModule } from './ng2-aws-cognito-identity';
 import { routing } from './app.routing';
 import { NavModule } from './nav/nav.module';
 import { FormsModule } from './forms/forms.module'
@@ -22,11 +23,14 @@ import { AlumniComponent } from './alumni/alumni.component';
 import { DonateComponent } from './donate/donate.component';
 import { RecruitmentComponent } from './recruitment/recruitment.component';
 import { RecruitmentSignUpComponent } from './recruitment/recruitment-sign-up/recruitment-sign-up.component';
-
-import { EnvService } from './env/env.service';
-import { MailchimpService } from './mailchimp/mailchimp.service';
 import { AlumniSignUpComponent } from './alumni/alumni-sign-up/alumni-sign-up.component';
 import { DonateButtonComponent } from './donate/donate-button/donate-button.component';
+
+import { BlogService } from './blog/blog.service';
+import { EnvService } from './env/env.service';
+import { MailchimpService } from './mailchimp/mailchimp.service';
+import { UserService } from './user/user.service';
+import { BlogComponent } from './blog/blog.component';
 
  let responsiveConfig = {
     breakPoints: {
@@ -52,7 +56,8 @@ import { DonateButtonComponent } from './donate/donate-button/donate-button.comp
     RecruitmentComponent,
     RecruitmentSignUpComponent,
     AlumniSignUpComponent,
-    DonateButtonComponent
+    DonateButtonComponent,
+    BlogComponent
   ],
   imports: [
     MaterialModule.forRoot(),
@@ -63,12 +68,15 @@ import { DonateButtonComponent } from './donate/donate-button/donate-button.comp
     routing,
     NavModule,
     FormsModule,
+    CognitoIdentityModule
   ],
   providers: [ 
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: ResponsiveConfig, useFactory: () => new ResponsiveConfig(responsiveConfig) },
+    BlogService,
     MailchimpService,
-    EnvService
+    EnvService,
+    UserService
   ],
   bootstrap: [ AppComponent ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

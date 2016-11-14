@@ -105,4 +105,27 @@ export class QuestionService {
     return questions.sort((a, b) => a.order - b.order);
   }
 
+  getLoginQuestions() {
+    let questions: QuestionBase<any>[] = [
+      new TextboxQuestion({
+        key: 'username',
+        label: 'Username*',
+        errorLabel: 'Username',
+        type: 'text',
+        required: false,
+        order: 1
+      }),
+      new TextboxQuestion({
+        key: 'password',
+        label: 'Password*',
+        errorLabel: 'Password',
+        required: false,
+        type: 'password',
+        order: 2
+      })
+    ];
+     
+    return questions.sort((a, b) => a.order - b.order);
+  }
+
 }

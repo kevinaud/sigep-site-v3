@@ -1,6 +1,7 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './user/login/login.component';
@@ -19,6 +20,10 @@ const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'blog',
+    component: BlogComponent
   },/*
   {
     path: 'exec-board',
@@ -54,6 +59,10 @@ export const appNavLocations = [
     {
       title: 'Home',
       route: '/home'
+    },
+    {
+      title: 'Blog',
+      route: '/blog'
     },/*
     {
       title: 'Exec Board',
