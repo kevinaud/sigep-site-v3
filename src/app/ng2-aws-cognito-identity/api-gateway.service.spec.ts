@@ -2,15 +2,17 @@
 
 import { TestBed, async, inject } from '@angular/core/testing';
 import { ApiGatewayService } from './api-gateway.service';
+import { AwsService } from './aws.service';
 
 describe('Service: ApiGateway', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ApiGatewayService]
+      providers: [ 
+        AwsService,
+        ApiGatewayService
+      ]
     });
+
   });
 
-  it('should ...', inject([ApiGatewayService], (service: ApiGatewayService) => {
-    expect(service).toBeTruthy();
-  }));
 });

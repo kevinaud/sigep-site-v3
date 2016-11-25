@@ -28,7 +28,26 @@ export class LoginComponent implements OnInit {
 
   onSubmit(event) {
 
-    this.userService.login(event.username, event.password);
+    this.waiting = true;
+
+    this.userService.login(event.username, event.password).then(
+      (success) => {
+      
+        console.log(success);
+        this.waiting = false;
+
+        /*this.response = { 
+          success: true,
+          message: success
+        };
+
+        this.responseReceived = true;*/
+
+      },
+      (error) => {
+        this.waiting = false;
+        console.log(error);
+      });
     /*this.responseReceived = false;
     this.waiting = true;
 

@@ -1,0 +1,33 @@
+<div class="row center-xs">
+  <div class="col-xs-11">
+    <div class="box">
+
+      <h1 class="title">Blog</h1>
+
+    </div>
+  </div>
+</div> 
+
+<div class="row center-xs">
+   <div class="col-xs-11 col-sm-7 col-md-6 col-lg-4">
+      <div class="box" *ngFor="let post of (posts | async)">
+
+         <md-card class="blog-post-card">
+
+            <md-card-header>
+              <md-card-title><h2>{{ post.title }}</h2></md-card-title>
+            </md-card-header>
+
+            <md-card-content>
+               {{ post.content }}
+            </md-card-content>
+
+            <md-card-actions>
+              <button md-button [routerLink]="['./post', post.id]">VIEW</button>
+            </md-card-actions>
+
+         </md-card>
+
+      </div>
+   </div>
+</div>

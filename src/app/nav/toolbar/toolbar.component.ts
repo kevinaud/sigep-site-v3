@@ -1,4 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { UserService } from '../../user/user.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,14 +11,20 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class ToolbarComponent implements OnInit {
 
   @Output() openSidenav: EventEmitter<any> = new EventEmitter();
+  authenticated: Observable<boolean>;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private userService: UserService) {
+    this.authenticated = this.userService.authStatus;
   }
+
+  ngOnInit() { }
 
   menuIconClick() {
     this.openSidenav.emit(null);
+  }
+
+  logout() {
+    this.userService.logout();
   }
 
 }

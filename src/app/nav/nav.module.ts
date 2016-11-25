@@ -6,6 +6,8 @@ import { MaterialModule } from '@angular/material';
 
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { UserService } from '../user/user.service';
+import { AwsService } from '../ng2-aws-cognito-identity/aws.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,10 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     ToolbarComponent,
     SidenavComponent
   ],
-  providers: [],
+  providers: [
+    UserService,
+    AwsService
+  ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class NavModule { }

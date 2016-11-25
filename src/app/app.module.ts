@@ -11,7 +11,8 @@ import { ResponsiveModule, ResponsiveConfig } from 'ng2-responsive';
 import { CognitoIdentityModule } from './ng2-aws-cognito-identity';
 import { routing } from './app.routing';
 import { NavModule } from './nav/nav.module';
-import { FormsModule } from './forms/forms.module'
+import { FormsModule } from './forms/forms.module';
+import { BlogModule } from './blog/blog.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -26,11 +27,9 @@ import { RecruitmentSignUpComponent } from './recruitment/recruitment-sign-up/re
 import { AlumniSignUpComponent } from './alumni/alumni-sign-up/alumni-sign-up.component';
 import { DonateButtonComponent } from './donate/donate-button/donate-button.component';
 
-import { BlogService } from './blog/blog.service';
 import { EnvService } from './env/env.service';
 import { MailchimpService } from './mailchimp/mailchimp.service';
 import { UserService } from './user/user.service';
-import { BlogComponent } from './blog/blog.component';
 
  let responsiveConfig = {
     breakPoints: {
@@ -56,8 +55,7 @@ import { BlogComponent } from './blog/blog.component';
     RecruitmentComponent,
     RecruitmentSignUpComponent,
     AlumniSignUpComponent,
-    DonateButtonComponent,
-    BlogComponent
+    DonateButtonComponent
   ],
   imports: [
     MaterialModule.forRoot(),
@@ -68,12 +66,12 @@ import { BlogComponent } from './blog/blog.component';
     routing,
     NavModule,
     FormsModule,
-    CognitoIdentityModule
+    CognitoIdentityModule,
+    BlogModule
   ],
   providers: [ 
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: ResponsiveConfig, useFactory: () => new ResponsiveConfig(responsiveConfig) },
-    BlogService,
     MailchimpService,
     EnvService,
     UserService

@@ -7,4 +7,9 @@
 
   <a class="title" [routerLink]="['/home']">SIGEP | TEXAS RHO</a>
 
+  <button md-button 
+    (click)="logout()" 
+    class="logout-btn"
+    *ngIf="authenticated | async">LOGOUT</button>
+
 </md-toolbar>

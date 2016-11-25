@@ -9,6 +9,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from '@angular/material';
 
 import { ToolbarComponent } from './toolbar.component';
+import { UserService } from '../../user/user.service';
+import { AwsService } from '../../ng2-aws-cognito-identity/aws.service';
+
+class AwsServiceStub { }
 
 describe('ToolbarComponent', () => {
   let component: ToolbarComponent;
@@ -22,6 +26,10 @@ describe('ToolbarComponent', () => {
         BrowserModule,
         RouterTestingModule.withRoutes([{ path: 'fakeRouteForTesting', redirectTo: 'fakeRouteForTesting', pathMatch: 'full' }]),
         MaterialModule.forRoot()
+      ],
+      providers: [
+        UserService,
+        { provide: AwsService, useClass: AwsServiceStub }
       ]
     })
     .compileComponents();

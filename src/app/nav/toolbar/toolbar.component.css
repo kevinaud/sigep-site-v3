@@ -18,3 +18,7 @@ md-toolbar {
 .title, .menu-icon {
   font-size: 22px;
 }
+
+.logout-btn {
+  margin-left: 16px;
+}

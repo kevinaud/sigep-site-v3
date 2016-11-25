@@ -9,6 +9,31 @@ import { AddressQuestion }  from './question-address';
 @Injectable()
 export class QuestionService {
 
+  getAddBlogPostQuestions() {
+
+    let questions: QuestionBase<any>[] = [
+      new TextboxQuestion({
+        key: 'title',
+        label: 'Title*',
+        errorLabel: 'Title',
+        required: true,
+        type: 'text',
+        order: 1
+      }),
+      new TextboxQuestion({
+        key: 'content',
+        label: 'Content*',
+        errorLabel: 'Content',
+        required: true,
+        type: 'text',
+        order: 2
+      }),
+    ];
+
+    return questions;
+
+  }
+
   getRecruitmentQuestions() {
     let questions: QuestionBase<any>[] = [
       new RadioQuestion({
