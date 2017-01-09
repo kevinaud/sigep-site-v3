@@ -26,6 +26,72 @@
    </div>
 </div>
 
+
+<div class="row center-xs">
+   <div class="col-xs-11 col-sm-7 col-md-6 col-lg-4">
+      <div class="box">
+
+        <md-card class="main-card">
+
+          <md-card-title class="text-center">Spring '17 Recruitment Schedule</md-card-title>
+          
+          <md-card-content>
+
+            <div class="row between-xs table-title">
+
+              <div class="col-xs-3">
+                <div class="box"><strong>Event</strong></div>
+              </div>
+
+              <div class="col-xs-3">
+                <div class="box"><strong>Date</strong></div>
+              </div>
+
+              <div class="col-xs-3">
+                <div class="box"><strong>When</strong></div>
+              </div>
+
+              <div class="col-xs-3">
+                <div class="box"><strong>Where</strong></div>
+              </div>
+            
+            </div>
+        
+            <div *ngFor="let event of events" class="row between-xs middle-xs event">
+
+              <div class="col-xs-3">
+                <div class="box">{{ event.title }}<span *ngIf="event.inviteOnly"><strong>*</strong></span></div>
+              </div>
+
+              <div class="col-xs-3">
+                <div class="box">{{ event.date }}</div>
+              </div>
+
+              <div class="col-xs-3">
+                <div class="box">{{ event.when }}</div>
+              </div>
+
+              <div class="col-xs-3">
+                <div class="box">{{ event.where }}</div>
+              </div>
+            
+            </div>
+
+            <div class="row end-xs">
+              <div class="col-xs-12">
+
+                <div class="box asterisk"><strong>* Invite Only</strong></div>
+
+              </div>
+            </div>
+
+          </md-card-content>
+        </md-card>
+
+      </div>
+   </div>
+</div>
+
 <div class="row center-xs">
    <div class="col-xs-11 col-sm-7 col-md-6 col-lg-4">
       <div class="box">

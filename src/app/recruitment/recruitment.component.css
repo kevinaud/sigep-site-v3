@@ -1,0 +1,12 @@
+.table-title {
+  border-bottom: 1px solid black;
+  padding-bottom: 12px;
+}
+
+.event {
+  padding-top: 12px;
+}
+
+.asterisk {
+  margin-top: 20px;
+}
